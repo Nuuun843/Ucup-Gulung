@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Kak Gulung — Telur Gulung & Cireng</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HALAMAN 1: DASHBOARD MENU ============ -->
+<main id="page-menu" class="page page--active">
+
+  <header class="topbar">
+    <div class="topbar__brand">
+      <span class="topbar__logo">🥚</span>
+      <div class="topbar__text">
+        <h1 class="topbar__title">Kak Gulung</h1>
+        <p class="topbar__sub">Telur gulung & cireng, gulung dulu baru goreng</p>
+      </div>
+    </div>
+    <div class="topbar__deco" aria-hidden="true">
+      <span class="skewer"></span>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Kategori menu">
+    <button class="tab tab--active" data-cat="telur" role="tab" aria-selected="true">🥚 Telur Gulung</button>
+    <button class="tab" data-cat="cireng" role="tab" aria-selected="false">🍘 Cireng</button>
+  </nav>
+
+  <section class="menu-list" id="menu-list" aria-live="polite">
+    <!-- diisi oleh JS -->
+  </section>
+
+  <div class="bottom-spacer" aria-hidden="true"></div>
+
+  <button class="order-bar" id="btn-pesan-sekarang" type="button">
+    <span class="order-bar__text">Pesan sekarang</span>
+    <span class="order-bar__badge" id="cart-count">0 item</span>
+    <span class="order-bar__total" id="cart-total">Rp 0</span>
+  </button>
+</main>
+
+<!-- ============ HALAMAN 2: FORM PEMBELI ============ -->
+<main id="page-checkout" class="page">
+
+  <header class="topbar topbar--checkout">
+    <button class="back-btn" id="btn-back" type="button" aria-label="Kembali ke menu">←</button>
+    <div class="topbar__text">
+      <h1 class="topbar__title">Konfirmasi pesanan</h1>
+      <p class="topbar__sub">Isi data buat kirim pesananmu ke kami</p>
+    </div>
+  </header>
+
+  <section class="summary-card" aria-label="Ringkasan pesanan">
+    <h2 class="summary-card__heading">Pesanan kamu</h2>
+    <ul class="summary-list" id="summary-list"></ul>
+    <div class="summary-total">
+      <span>Total</span>
+      <strong id="summary-total-price">Rp 0</strong>
+    </div>
+  </section>
+
+  <form class="buyer-form" id="buyer-form">
+    <label class="field">
+      <span class="field__label">Nama lengkap</span>
+      <input class="field__input" type="text" id="nama_lengkap" name="nama_lengkap" placeholder="Contoh: Siti Aminah" autocomplete="name" required>
+    </label>
+
+    <label class="field">
+      <span class="field__label">Alamat pengiriman</span>
+      <textarea class="field__input field__input--area" id="alamat" name="alamat" rows="3" placeholder="Nama jalan, no rumah, RT/RW, patokan terdekat" autocomplete="street-address" required></textarea>
+    </label>
+
+    <label class="field">
+      <span class="field__label">Catatan tambahan <em class="field__optional">(opsional)</em></span>
+      <textarea class="field__input field__input--area" id="catatan" name="catatan" rows="2" placeholder="Contoh: pedasnya sedikit, tanpa saus kacang, dll"></textarea>
+    </label>
+
+    <p class="field__hint" id="form-hint" role="alert"></p>
+
+    <button class="btn-wa" id="btn-kirim-wa" type="submit">
+      <svg class="btn-wa__icon" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.26.6 4.43 1.7 6.34L3.2 28.8l6.65-1.7a12.74 12.74 0 0 0 6.19 1.6h.01c7.06 0 12.8-5.73 12.8-12.8s-5.74-12.7-12.81-12.7zm0 23.4h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4 1.02 1.07-3.9-.25-.4a10.57 10.57 0 0 1-1.62-5.6c0-5.85 4.76-10.6 10.61-10.6 2.83 0 5.49 1.1 7.49 3.11a10.52 10.52 0 0 1 3.11 7.5c0 5.84-4.76 10.6-10.6 10.6zm5.8-7.94c-.32-.16-1.88-.93-2.17-1.04-.29-.1-.5-.16-.71.16-.21.32-.82 1.04-1 1.25-.19.21-.37.24-.69.08-1.87-.94-3.1-1.67-4.33-3.79-.33-.56.33-.52.94-1.74.1-.21.05-.4-.05-.56-.1-.16-.71-1.71-.97-2.34-.26-.62-.52-.54-.71-.55-.19-.01-.4-.01-.61-.01-.21 0-.56.08-.85.4-.29.32-1.13 1.1-1.13 2.69 0 1.58 1.16 3.11 1.32 3.33.16.21 2.2 3.36 5.34 4.58 2.67 1.04 3.21.83 3.79.78.58-.05 1.88-.77 2.14-1.5.27-.74.27-1.38.19-1.5-.08-.13-.29-.21-.6-.37z"/></svg>
+      <span>Kirim pesanan via WhatsApp</span>
+    </button>
+  </form>
+</main>
+
+<!-- ============ TOAST (notifikasi tambah ke keranjang) ============ -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
