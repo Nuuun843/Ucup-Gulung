@@ -4,7 +4,7 @@
    (format internasional tanpa "+" atau "0" di depan, contoh
    untuk 0812-3456-7890 -> "6281234567890")
 =========================================================== */
-const NOMOR_WA_TOKO = "6281234567890";
+const NOMOR_WA_TOKO = "628812481500";
 const NAMA_TOKO = "Kak Gulung";
 
 /* ===========================================================
